@@ -2,7 +2,7 @@ public class Car {
     
     int maxSpeed = 120;
     int minSpeed = 10;
-    double weight = 1000;
+    double weight = 2000;
     boolean isTheCarOn = false;
     String license = "ABC-123";
     char condition = 'A'; 
