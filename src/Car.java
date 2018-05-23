@@ -2,7 +2,7 @@ public class Car {
     
     int maxSpeed = 120;
     int minSpeed = 10;
-    double weight = 2000;
+    double weight = 1000;
     boolean isTheCarOn = false;
     String license = "ABC-123";
     char condition = 'A'; 
@@ -24,4 +24,18 @@ public class Car {
         this.mileagePassed = mileagePassed;
     }
     
+    public void changeMileage(int newMileage){
+        
+        if(newMileage > mileagePassed){
+            this.mileagePassed = newMileage;
+            this.currentPrice = currentPrice - 300;
+        }
+        if(newMileage < mileagePassed){
+            this.mileagePassed = newMileage;
+            this.currentPrice = currentPrice + 300;
+        }
+        if(newMileage == mileagePassed){
+            
+        }
+    }
 }
