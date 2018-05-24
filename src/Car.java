@@ -25,17 +25,22 @@ public class Car {
     }
     
     public void changeMileage(int newMileage){
-        
+       int diff; 
+       int multiplyChange;
+       
         if(newMileage > mileagePassed){
+ 
+            diff = newMileage - mileagePassed;
+            multiplyChange = diff / 10000;
+            this.currentPrice = currentPrice - multiplyChange * 300;
             this.mileagePassed = newMileage;
-            this.currentPrice = currentPrice - 300;
         }
         if(newMileage < mileagePassed){
-            this.mileagePassed = newMileage;
-            this.currentPrice = currentPrice + 300;
-        }
-        if(newMileage == mileagePassed){
             
+            diff = mileagePassed - newMileage;
+            multiplyChange = diff / 10000;
+            this.currentPrice = currentPrice + multiplyChange * 300;
+            this.mileagePassed = newMileage;
         }
     }
 }

@@ -14,10 +14,13 @@ public class Main {
         Car companyCar = new Car(150, 30, 2000, false, "AB-554", 'B', 3500, 75000);
         System.out.println("Maksimalna brzina je: " + companyCar.maxSpeed + " km/h.");
         
-        companyCar.changeMileage(100000);
+        companyCar.changeMileage(85000);
         System.out.println(companyCar.mileagePassed);
         System.out.println(companyCar.currentPrice);
- 
+        
+        myCar.changeMileage(35000);
+        System.out.println(myCar.mileagePassed);
+        System.out.println(myCar.currentPrice);
     }
 
 }
