@@ -46,7 +46,8 @@ public class Main {
         audi.printMainAttributes();
 
         Car testAuto = new Car();
-        testAuto.changeMaxPassenges(9);
+        testAuto.changeMaxPassengers(9);
+        testAuto.changeMaxPassengers(9);
         testAuto.printMainAttributes();
         testAuto.getIn();
         testAuto.printMainAttributes();
