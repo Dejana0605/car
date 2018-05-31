@@ -15,10 +15,15 @@ public class Car {
     int currentFuel;
     int consumption;
 
+    int currentPassengers;
+    int maxPassengers;
+
     public Car() {
         this.model = "default";
         this.currentFuel = 0;
         this.maxFuel = 100;
+        this.currentPassengers = 1;
+        this.maxPassengers = 5;
     }
 
     public Car(int maxSpeed, int minSpeed, double weight, boolean isTheCarOn, String license, char condition, double currentPrice, int mileagePassed) {
@@ -61,6 +66,7 @@ public class Car {
         System.out.println("Trenutno je u rezervoaru: " + this.currentFuel);
         System.out.println("Predjena kilometraza je: " + this.mileagePassed);
         System.out.println("Potrosnja: " + this.consumption);
+        System.out.println("trenutno putnika:" + this.currentPassengers + ", maksimalno:" + this.maxPassengers);
         System.out.println(" ");
 
     }
@@ -103,4 +109,30 @@ public class Car {
         }
 
     }
+
+    public void getIn() {
+
+        if (this.currentPassengers < this.maxPassengers) {
+            this.currentPassengers = this.currentPassengers + 1;
+            System.out.println("usao jedan putnik,trenutno stanje" + this.currentPassengers);
+        } else {
+            System.out.println("nema vise mesta");
+        }
+
+    }
+
+    public void getOut() {
+
+        if (this.currentPassengers > 5) {
+            this.currentPassengers = this.currentPassengers - 1;
+            System.out.println("izasao jedan putnik, trenutno putnika:" + this.currentPassengers);
+        } else {
+            System.out.println("neka izadje jedan");
+        }
+    }
+    
+    public void changeMaxPassengers (int newMax) {
+    this.maxPassengers = newMax;
+    }
+
 }
