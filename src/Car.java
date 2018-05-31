@@ -22,7 +22,7 @@ public class Car {
         this.model = "default";
         this.currentFuel = 0;
         this.maxFuel = 100;
-        this.currentPassengers = 1;
+        this.currentPassengers = 0;
         this.maxPassengers = 5;
     }
 
@@ -125,7 +125,7 @@ public class Car {
 
         if (this.currentPassengers > 5) {
             this.currentPassengers = this.currentPassengers - 1;
-            System.out.println("izasao jedan putnik, trenutno putnika:" + this.currentPassengers);
+            System.out.println("Izasao jedan putnik, trenutno putnika: " + this.currentPassengers);
         } else {
             System.out.println("neka izadje jedan");
         }
@@ -135,4 +135,23 @@ public class Car {
     this.maxPassengers = newMax;
     }
 
+    public void getIn(int numberOfPassangers) {
+
+        if (this.currentPassengers + numberOfPassangers <= this.maxPassengers) {
+            this.currentPassengers = this.currentPassengers + numberOfPassangers;
+            System.out.println("Usao/lo je " + numberOfPassangers + " putnik/a,trenutno stanje " + this.currentPassengers);
+        } else {
+            System.out.println("Nema mesta za " + numberOfPassangers + " putnika. Slobodnih mesta: " + (this.maxPassengers - this.currentPassengers));
+        }
+    }
+    
+     public void getOut(int numberOfPassangers) {
+
+        if (this.currentPassengers >= numberOfPassangers) {
+            this.currentPassengers = this.currentPassengers - numberOfPassangers;
+            System.out.println("Izasao/lo " + numberOfPassangers + " putnik/a, trenutno putnika: " + this.currentPassengers);
+        } else {
+            System.out.println("Nema toliko putnika");
+        }
+    }
 }
